@@ -1,68 +1,68 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-// creates an empty employeeData array
+// creates an empty arrayOfEmployees array
 const arrayOfEmployees = [];
 
 
 // Collect employee data
 const collectEmployees = function() {  // TODO: Get user input to create and return an array of employee objects
-// sets default for: add = window.confirm(`Do you want to add another employee?`)
-let add = true; 
+  // sets default for: add = window.confirm(`Do you want to add another employee?`)
+  let add = true; 
 
-// runs while loop as long as we want to add another employee
-while(add) {  
+  // runs while loop as long as we want to add another employee
+  while(add) {
   let firstName = prompt(`Enter First Name:`);
   // break will allow the collection process to stop if user clicks 'Cancel'
-    if(firstName === null) break;
+  if(firstName === null) break;
+
   let lastName = prompt(`Enter Last Name:`);
-    if(lastName === null) break;
+  if(lastName === null) break;
+
   let salary = parseFloat(prompt(`Enter Salary:`, 0));
+   
+  // push data into employee array and then increment i
+  arrayOfEmployees.push((firstName, lastName, salary));
 
-
-    
-// push data into employee array and then increment i
-arrayOfEmployees.push((firstName, lastName, salary));
-
-// confirm button to add another employee
-add = window.confirm(`Do you want to add another employee?`); 
-} 
+  // confirm button to add another employee
+  add = window.confirm(`Do you want to add another employee?`); 
+  } 
 return arrayOfEmployees;
 }
 
-//text line
-console.log('these are my employees:',employeesArray);
+// No longer - WORKS TO HERE!!!  //
 
-// WORKS TO HERE!!!  //
+
+// Now getting this message:
+// The average employee salary between our 7 employee(s) is NaN.
 
 // Calculates and displays the average salary of all employees
 const displayAverageSalary = function(employeesArray) {
-// sets initial value to 0 so we can sum
-let sum = 0;
+  // sets initial value to 0 so we can sum
+  let sum = 0;
 
-// loops through each employee and pulls out their Salary value
-for(let employee of employeesArray) {
-  // sums up all the employees salary
-  sum += employeesArray.salary;
-}
+  // loops through each employee and pulls out their Salary value
+  for(let employees of employeesArray) {
+    // sums up all the employees salary
+    sum += employees.salary;
+  }
 // once we have the sum total, we can find the average. (.tofixed(2) displays 2 decimal points)
 const average = (sum/employeesArray.length).toFixed(2);
 console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${average}.`)
 }
 
+
+// Now getting this message:
+// Congratulations to undefined undefined, our random drawing winner!!!
+
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
 
-  console.log('CCCC')
-
-
   // Picks a random number based on number of employees
-  randomNumber = Math.floor(Math.random() * employeesArray.length);
+  let randomNumber = Math.floor(Math.random() * employeesArray.length);
   console.log(randomNumber);
-  console.log(`Congratulations to ${employeesArray.firstName[randomNumber]} ${employeesArray.lastName[randomNumber]}, our random drawing winner!!!`)
+  console.log(`Congratulations to ${employeesArray[randomNumber].firstName} ${employeesArray[randomNumber].lastName}, our random drawing winner!!!`)
 
-
-  return randomNumber;
 }
 
 
