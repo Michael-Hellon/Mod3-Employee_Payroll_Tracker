@@ -42,9 +42,10 @@ const displayAverageSalary = function(employeesArray) {
   let sum = 0;
 
   // loops through each employee and pulls out their Salary value
-  for(let employees of employeesArray) {
+  // changed from employees - caused conflict below
+  for(let employee of employeesArray) {  
     // sums up all the employees salary
-    sum += employees.salary;
+    sum += employee.salary;
   }
 // once we have the sum total, we can find the average. (.tofixed(2) displays 2 decimal points)
 const average = (sum/employeesArray.length).toFixed(2);
