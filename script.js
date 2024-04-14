@@ -2,32 +2,43 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Initialize an empty array to store employee data
-const employeesArray = [];
+const employeesArray = [
+  { firstName: Jeri,
+    lastName: Gulsby,
+    salary: 34600},
+    { firstName: Joe,
+      lastName: Hills,
+      salary: 14000},
+      { firstName: Shana,
+        lastName: Smith,
+        salary: 45789},
+];
 const randomNumber = 0;
-
+declare an object
+const employee = {
+    firstName,
+    lastName,
+    salary,
+  }
 // Collect employee data
 const collectEmployees = function() {  // TODO: Get user input to create and return an array of employee objects
 
  
   let add = true; 
   while(add) {  
-    let employeeFirstName = prompt(`Enter First Name:`);
-    let employeeLastName = prompt(`Enter Last Name:`);
-    let employeeSalary = parseFloat(prompt(`Enter Salary:`, `0`)); // default = (prompt(`Enter Salary:`, `0`))
-      // if (isNaN(employeeSalary)) {
-      //   alert(`You must enter a number.`);
-      //   } else {
-      //   alert(`Thank you for entering a number`);
-      // }
+    let firstName = prompt(`Enter First Name:`);
+    let lastName = prompt(`Enter Last Name:`);
+    let alary = parseFloat(prompt(`Enter Salary:`, `0`)); // default = (prompt(`Enter Salary:`, `0`))
+      if (isNaN(employeeSalary)) {
+        alert(`You must enter a number.`);
+        } else {
+        alert(`Thank you for entering a number`);
+      }
     
     if (!add) break;
 
   // build object to store employee data in to push into array
-  const employee = {
-    firstName:employeeFirstName,
-    lastName:employeeLastName,
-    salary:employeeSalary,
-  }
+  
   add = window.confirm(`Do you want to add another employee?`)
   // push data into employee array and then increment i
   employeesArray.push(employee);  
