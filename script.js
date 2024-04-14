@@ -1,73 +1,53 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-// Initialize an empty array to store employee data
-const employeesArray = [
-  { firstName: Jeri,
-    lastName: Gulsby,
-    salary: 34600},
-    { firstName: Joe,
-      lastName: Hills,
-      salary: 14000},
-      { firstName: Shana,
-        lastName: Smith,
-        salary: 45789},
-];
-const randomNumber = 0;
-declare an object
-const employee = {
-    firstName,
-    lastName,
-    salary,
-  }
+// creates an empty employeeData array
+const arrayOfEmployees = [];
+
+
 // Collect employee data
 const collectEmployees = function() {  // TODO: Get user input to create and return an array of employee objects
+// sets default for: add = window.confirm(`Do you want to add another employee?`)
+let add = true; 
 
- 
-  let add = true; 
-  while(add) {  
-    let firstName = prompt(`Enter First Name:`);
-    let lastName = prompt(`Enter Last Name:`);
-    let alary = parseFloat(prompt(`Enter Salary:`, `0`)); // default = (prompt(`Enter Salary:`, `0`))
-      if (isNaN(employeeSalary)) {
-        alert(`You must enter a number.`);
-        } else {
-        alert(`Thank you for entering a number`);
-      }
+// runs while loop as long as we want to add another employee
+while(add) {  
+  let firstName = prompt(`Enter First Name:`);
+  // break will allow the collection process to stop if user clicks 'Cancel'
+    if(firstName === null) break;
+  let lastName = prompt(`Enter Last Name:`);
+    if(lastName === null) break;
+  let salary = parseFloat(prompt(`Enter Salary:`, 0));
+
+
     
-    if (!add) break;
+// push data into employee array and then increment i
+arrayOfEmployees.push((firstName, lastName, salary));
 
-  // build object to store employee data in to push into array
-  
-  add = window.confirm(`Do you want to add another employee?`)
-  // push data into employee array and then increment i
-  employeesArray.push(employee);  
-  }
- 
+// confirm button to add another employee
+add = window.confirm(`Do you want to add another employee?`); 
+} 
+return arrayOfEmployees;
 }
 
+//text line
 console.log('these are my employees:',employeesArray);
-
-
-addEmployeesBtn.addEventListener('click', function() {
-  add = collectEmployees();
-});
 
 // WORKS TO HERE!!!  //
 
-// Display the average salary
+// Calculates and displays the average salary of all employees
 const displayAverageSalary = function(employeesArray) {
-  // Calculates and displays the average salary of all employees
-  let sum = 0;
+// sets initial value to 0 so we can sum
+let sum = 0;
 
-  console.log('AAAAA')
-  
-  for(let i = 0; i < employeesArray.length; i++){
-    sum += employeesArray[i].salary;
-  }
-  console.log('BBBB')
-  const average = sum/employeesArray.length;
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${average}.`)
+// loops through each employee and pulls out their Salary value
+for(let employee of employeesArray) {
+  // sums up all the employees salary
+  sum += employeesArray.salary;
+}
+// once we have the sum total, we can find the average. (.tofixed(2) displays 2 decimal points)
+const average = (sum/employeesArray.length).toFixed(2);
+console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${average}.`)
 }
 
 // Select a random employee
