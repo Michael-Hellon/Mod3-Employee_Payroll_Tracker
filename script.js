@@ -19,18 +19,28 @@ const collectEmployees = function() {  // TODO: Get user input to create and ret
   let lastName = prompt(`Enter Last Name:`);
   if(lastName === null) break;
 
-  let salary = parseFloat(prompt(`Enter Salary:`, 0));
+  let salary = Number(prompt(`Enter Salary:`, 0));
+    // could not get parseFloat to work properly - changed to number
+    // should have left the isNan if statement in
+    // if (salary === isNaN) {
+    //   break;    
+    // } else {
+    //   alert(`Thank you for entering a number.`);
+    // }
    
-  // push data into employee array and then increment i
+  // push data into arrayOfEmployees
   arrayOfEmployees.push((firstName, lastName, salary));
 
   // confirm button to add another employee
   add = window.confirm(`Do you want to add another employee?`); 
   } 
+  console.log(arrayOfEmployees);
 return arrayOfEmployees;
 }
 
 // No longer - WORKS TO HERE!!!  //
+
+console.log('array of employees:', arrayOfEmployees);
 
 
 // Now getting this message:
@@ -40,16 +50,16 @@ return arrayOfEmployees;
 const displayAverageSalary = function(employeesArray) {
   // sets initial value to 0 so we can sum
   let sum = 0;
-
-  // loops through each employee and pulls out their Salary value
-  // changed from employees - caused conflict below
-  for(let employee of employeesArray) {  
-    // sums up all the employees salary
-    sum += employee.salary;
+  // changed from for of loop - been a few months since I studied them.
+  for(var i = 0; i < employeesArray.length; i++) {
+    console.log('sum:', sum)
+    console.log('employeesArray[i].salary:', employeesArray[i].salary);
+    sum += employeesArray[i].salary;
   }
-// once we have the sum total, we can find the average. (.tofixed(2) displays 2 decimal points)
-const average = (sum/employeesArray.length).toFixed(2);
-console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${average}.`)
+  // once we have the sum total, we can find the average. (.tofixed(2) displays 2 decimal points)
+  const average = (sum/employeesArray.length).toFixed(2);
+  console.log(`average:`, average);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${average}.`)
 }
 
 
