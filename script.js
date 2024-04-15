@@ -27,9 +27,10 @@ const collectEmployees = function() {  // TODO: Get user input to create and ret
     // } else {
     //   alert(`Thank you for entering a number.`);
     // }
-   
+      
   // push data into arrayOfEmployees
-  arrayOfEmployees.push((firstName, lastName, salary));
+    // ************** Just found the problem. I need {} instead of ()
+    arrayOfEmployees.push({firstName, lastName, salary});
 
   // confirm button to add another employee
   add = window.confirm(`Do you want to add another employee?`); 
