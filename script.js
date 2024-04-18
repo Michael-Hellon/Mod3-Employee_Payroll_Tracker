@@ -21,8 +21,10 @@ const collectEmployees = function() {
 
   let salary = Number(prompt(`Enter Salary:`, 0));
     // could not get parseFloat to work properly - changed to number
+
+  // The If-else works below. I removed it because I set the default value to zero.  
     
-    // if (salary === isNaN) {
+  // if (salary === isNaN) {
     //   break;    
     // } else {
     //   alert(`Thank you for entering a number.`);
