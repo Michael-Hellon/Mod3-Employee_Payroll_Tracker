@@ -41,10 +41,12 @@ There are no special installation steps for this project. All you need to do is 
 
 Once you have it in your local repository, on your computer, you can use Visual Studio Code to open the folder. Then you will see the JavaScript.js (currently with my pseudo-code notes in the top half) the index.html, the style.css and other associated files. You can then review the files, preview the script.js, style.css, and the index.html, and then open the index.html in a browser. Click on “Add Employees” to build your own tracker.
 
+
 To see the project on the browser visit < https://michael-hellon.github.io/Mod3-Employee_Payroll_Tracker/>.
 
 
 ![screenshot](/Assets/images/consoleAndTrackerScreenshot.png)
+
 
 ![screenshot](/Assets/images/EmployeePayrollTrackerScreenshot.png)
 
