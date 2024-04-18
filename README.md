@@ -44,9 +44,9 @@ Once you have it in your local repository, on your computer, you can use Visual 
 To see the project on the browser visit < https://michael-hellon.github.io/Mod3-Employee_Payroll_Tracker/>.
 
 
-![screenshot](/assets/images/consoleAndTrackerScreenshot.png)
+![screenshot](/Assets/images/consoleAndTrackerScreenshot.png)
 
-![screenshot](/assets/images/EmployeePayrollTrackerScreenshot.png)
+![screenshot](/Assets/images/EmployeePayrollTrackerScreenshot.png)
 
 ## Credits
 
