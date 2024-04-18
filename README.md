@@ -33,7 +33,6 @@ WHEN I choose to cancel
 THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
 ```
 
-
 ## Installation
 
 There are no special installation steps for this project. All you need to do is clone the repository from GitHub onto your computer.
